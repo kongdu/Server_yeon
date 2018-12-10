@@ -22,13 +22,13 @@ app.use(session({
 
 //몽고 DB 연결을 위한 함수
 function connectDB(){
-  var databaseUrl = "mongodb://localhost:27017/testdb";
+  var databaseUrl = "mongodb://admin:admin1234@ds121311.mlab.com:21311/tictactoe201812";
 
   //DB연결 
   mongodb.connect(databaseUrl, function(err, database){
     if(err) throw err;
     console.log('DB 연결 완료!: '+ databaseUrl);
-    app.set('database', database.db('testdb'));
+    app.set('database', database.db('tictactoe201812'));
   });
 }
   connectDB();
